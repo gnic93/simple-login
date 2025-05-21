@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <form action="register" method="POST">
+        <h1>Registration</h1>
+
+        <label for="user">User</label>
+        <input type="text" name="user" required>
+
+        <label for="name">Full Name</label>
+        <input type="text" name="name" required>
+
+        <label for="rol">Rol</label>
+        <select name="rol" id="rol" class="select-css">
+            <option value="admin" selected>Admin</option>
+            <option value="data entry">Data Entry</option>
+        </select>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+
+        <div>
+            <a href="/" class="btn-cancel">Cancel</a>
+            <input type="submit" class="btn-save" value="Save">
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert !== 'undefined') { %>
+        <script>
+            Swal.fire({
+                icon: '<%= alertIcon %>',
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                showConfirmButton: '<%= showConfirmButton %>',
+                confirmButtonText: 'OK',
+                timer: '<%= timer %>',
+            }).then( () => {
+                window.location='/<%= ruta %>';
+            })
+        </script>
+    <% } %>
+
+    <button id="dark-mode-btn" type="button">Dark Mode</button>
+    <script src="script.js"></script>
+</body>
+</html>

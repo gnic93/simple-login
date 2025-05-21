@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏠</h1>
+
+        <% if (login) { %>
+        <h1>Usuario conectado: <strong><%= name %></strong></h1>                        
+        <a href="logout" class="a-logout">Logout</a>
+        <%} else { %>
+        <h1><strong><%= name %></strong></h1>   
+        <a href="login" class="a-login">Ir a Login</a>
+        <% } %>
+
+    </div>
+    <button id="dark-mode-btn" type="button">Dark Mode</button>
+    <script src="script.js"></script>
+</body>
+</html>
